@@ -46,7 +46,7 @@ public class ImageUtil {
     /**
      * ImageMagick安装路径
      */
-    private static final String IMAGE_MAGICK_PATH = "/usr/local/Cellar/imagemagick/7.0.7-7";
+    private static final String IMAGE_MAGICK_PATH = "/usr/local/Cellar/imagemagick/7.0.7-8";
     private static final String CMD_SEARCH_PATH = "/usr/local/bin";
 
     /**
@@ -57,7 +57,7 @@ public class ImageUtil {
     /**
      * 水印图片路径
      */
-    private static String watermarkImagePath = "/Users/lizhenmin/tmp/img/watermark.png";
+    private static String watermarkImagePath = "/Users/ckex/tmp/image/test.jpg";
 
     /**
      * 水印图片
