@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
@@ -57,7 +59,7 @@ public class ImageUtil {
     /**
      * 水印图片路径
      */
-    private static String watermarkImagePath = "/Users/ckex/tmp/image/test.jpg";
+    private static String watermarkImagePath = Config.watermarkImagePath;
 
     /**
      * 水印图片
@@ -638,4 +640,66 @@ public class ImageUtil {
     	imgToBlackWhite(new File(src), new File(des));
     	
     }
+    
+    /**
+     * 去噪音（去除干扰线）
+     * 
+     * @param image
+     *            原图片
+     * @return 去噪音后的图片
+   
+    public static BufferedImage StartDenoising(BufferedImage img) {
+
+        int width = img.getWidth();
+        int height = img.getHeight();
+
+        for (int x = 0; x < width; x++) {
+            // 记录数列的点
+            List<PixColorShow> PixColorShowList = new ArrayList<PixColorShow>();
+            for (int y = 0; y < height; y++) {
+                Color color = new Color(img.getRGB(x, y));
+
+                PixColorShow pColorShow = new PixColorShow();
+                pColorShow.pixValue = color.getRed();
+                pColorShow.YCoordinate = y;
+                PixColorShowList.add(pColorShow);
+            }
+
+            //判断连续点
+            StringBuffer sBuffer = new StringBuffer();
+            for (int index = 0; index < PixColorShowList.size(); index++) {
+                if (PixColorShowList.get(index).pixValue < 100) {
+                    sBuffer.append("1");
+                } else {
+                    sBuffer.append("0");
+                }
+            }
+            
+            String showString=sBuffer.toString();
+            
+            //System.out.println(showString);
+                    
+            ArrayList<Integer> seriesPointList=new ArrayList<Integer>();            
+            Pattern pattern = Pattern.compile("0110");
+            Matcher matcher = pattern.matcher(showString);
+    
+            while (matcher.find()) {
+                int startpoise =matcher.start();
+                int endpoise=matcher.end();            
+                while (startpoise<endpoise) {
+                    seriesPointList.add(startpoise);
+                    startpoise++;        
+                }            
+            }
+                                
+            // 去除连续点
+            for (int i=0;i<seriesPointList.size();i++) {
+
+                img.setRGB(x, seriesPointList.get(i), Color.WHITE.getRGB());
+            }
+
+        }
+
+        return img;
+    }  */
 }
