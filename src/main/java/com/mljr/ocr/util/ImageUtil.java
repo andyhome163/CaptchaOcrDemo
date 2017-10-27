@@ -634,4 +634,8 @@ public class ImageUtil {
         }
         ImageIO.write(img, "jpg", file);
     }
+    public static void imgToBlackWhite(String src,String des) throws Exception {
+    	imgToBlackWhite(new File(src), new File(des));
+    	
+    }
 }

@@ -1,6 +1,5 @@
 package com.mljr.ocr;
 
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -17,9 +16,9 @@ import org.apache.http.impl.client.HttpClients;
 import com.asprise.ocr.Ocr;
 import com.mljr.ocr.util.ImageUtil;
 
+import net.sourceforge.tess4j.ITessAPI.TessBaseAPI;
 import net.sourceforge.tess4j.Tesseract;
-import net.sourceforge.tess4j.TesseractException;
-import net.sourceforge.tess4j.util.ImageHelper;  
+import net.sourceforge.tess4j.TesseractException;  
   
   
 public class CaptchaOcrDemo{  
@@ -71,9 +70,8 @@ public class CaptchaOcrDemo{
 		}
         
        
-        
-        
         Tesseract tessreact = new Tesseract();  
+        tessreact.setTessVariable("tessedit_char_whitelist", "0123456789");//设置限定字条 ，提高数字验证码识别率
         tessreact.setDatapath("/Users/lizhenmin/work/tessdata");  
         try {  
         	
