@@ -16,6 +16,7 @@ import org.apache.http.impl.client.HttpClients;
 import com.asprise.ocr.Ocr;
 import com.mljr.ocr.util.ImageUtil;
 
+import net.sourceforge.tess4j.ITessAPI.TessPageSegMode;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
@@ -71,7 +72,8 @@ public class CaptchaOcrDemo {
 
 
         Tesseract tessreact = new Tesseract();
-        tessreact.setTessVariable("tessedit_char_whitelist", "0123456789");
+        tessreact.setTessVariable("tessedit_char_whitelist", "0123456789");//设置限定字符
+        tessreact.setPageSegMode(TessPageSegMode.PSM_SINGLE_CHAR);//设定单个字符
         tessreact.setDatapath(tessdataPath);
         try {
 
