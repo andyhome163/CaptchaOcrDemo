@@ -14,7 +14,6 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 
-import com.asprise.ocr.Ocr;
 import com.mljr.ocr.util.ClearImageHelper;
 import com.mljr.ocr.util.Config;
 import com.mljr.ocr.util.ImageUtil;
@@ -124,7 +123,7 @@ public class CaptchaOcrDemo {
        // aspriseOcr(testImg);
    }
     
-   private  static void aspriseOcr(File imageFile) {
+ /*  private  static void aspriseOcr(File imageFile) {
 
         Ocr.setUp(); // one time setup
         Ocr ocr = new Ocr(); // create a new OCR engine
@@ -135,7 +134,7 @@ public class CaptchaOcrDemo {
         ocr.stopEngine();
 
     }
-
+*/
 }  
 
 
