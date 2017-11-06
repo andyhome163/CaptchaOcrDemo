@@ -30,14 +30,13 @@
 			<artifactId>commons-logging</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
-		<!--  
 		<dependency>
-			<groupId>com.asprise.ocr</groupId>
-			<artifactId>java-ocr-api</artifactId>
-			<version>[15,)</version>
+			<groupId>cn.easyproject</groupId>
+			<artifactId>easyocr</artifactId>
+			<version>3.0.4-RELEASE</version>
 		</dependency>
-		-->
+		<!-- <dependency> <groupId>com.asprise.ocr</groupId> <artifactId>java-ocr-api</artifactId> 
+			<version>[15,)</version> </dependency> -->
 		<!-- https://mvnrepository.com/artifact/net.sourceforge.tess4j/tess4j -->
 		<dependency>
 			<groupId>net.sourceforge.tess4j</groupId>
@@ -46,13 +45,8 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.im4java/im4java -->
-		<!--  
-		<dependency>
-			<groupId>org.im4java</groupId>
-			<artifactId>im4java</artifactId>
-			<version>1.4.0</version>
-		</dependency>
-		-->
+		<!-- <dependency> <groupId>org.im4java</groupId> <artifactId>im4java</artifactId> 
+			<version>1.4.0</version> </dependency> -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
