@@ -1,4 +1,4 @@
-package com.mljr.ocr.util;
+package com.ctakit.ocr.util;
 
 import java.awt.Color;
 import java.awt.color.ColorSpace;

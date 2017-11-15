@@ -1,4 +1,4 @@
-package com.mljr.ocr.util;
+package com.ctakit.ocr.util;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -8,6 +8,8 @@ import java.util.List;
 import javax.imageio.ImageIO;
 
 import org.junit.Test;
+
+import com.ctakit.ocr.util.ImageUtil;
 
 /**
  * Unit test for simple App.
